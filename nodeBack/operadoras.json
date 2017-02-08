@@ -1,0 +1,7 @@
+[
+  {"nome": "Oi", "codigo":14, "categoria": "Celular"},
+  {"nome": "Vivo", "codigo":15, "categoria": "Celular"},
+  {"nome": "Tim", "codigo":41, "categoria": "Celular"},
+  {"nome": "GVT", "codigo":15, "categoria": "Fixo"},
+  {"nome": "Embratel", "codigo":41, "categoria": "Fixo"}
+]

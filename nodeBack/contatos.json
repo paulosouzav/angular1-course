@@ -1,0 +1,35 @@
+[
+  {
+    "nome": "Paulo Virote",
+    "telefone":"99516-5152",
+    "data":"2015-04-12",
+    "operadora":{
+      "nome":"Vivo",
+      "codigo":"15",
+      "categoria":"Celular"
+    },
+    "cor": "#e74c3c"
+  },
+  {
+    "nome": "Gabriela Gelb",
+    "telefone":"99780-2923",
+    "data":"2013-03-15",
+    "operadora":{
+      "nome":"Vivo",
+      "codigo":"15",
+      "categoria":"Celular"
+    },
+    "cor": "#2ecc71"
+  },
+  {
+    "nome": "Silvia Helena",
+    "telefone":"3658-3720",
+    "data":"2017-01-01",
+    "operadora":{
+      "nome":"Oi",
+      "codigo":"22",
+      "categoria":"Fixo"
+    },
+    "cor":"#3498db"
+  }
+]
