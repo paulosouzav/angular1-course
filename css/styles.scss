@@ -24,3 +24,22 @@
 td{
   text-align: left;
 }
+
+.ui-accordion-title{
+  background-color: #3498db;
+}
+
+.ui-accordion-title h3{
+  color: #fff;
+  padding: 5px;
+  margin-bottom: 0;
+  margin-top: 5px;
+}
+
+.ui-accordion-content{
+  background-color: #fff;
+  border: 1px dashed #2980b9;
+  border-top: none;
+  padding: 5px 15px 5px 15px;
+  text-align: justify;
+}

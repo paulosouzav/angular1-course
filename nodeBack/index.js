@@ -11,6 +11,28 @@ var operadoras = [
 ];
 var contatos = [
   {
+    "nome": "maRIANa fERMaN",
+    "telefone":"95416-5152",
+    "data":"2012-04-12",
+    "operadora":{
+      "nome":"Vivo",
+      "codigo":"15",
+      "categoria":"Celular"
+    },
+    "cor":"#9b59b6"
+  },
+  {
+    "nome": "clauDionoR da SILVA",
+    "telefone":"95416-5152",
+    "data":"2012-04-12",
+    "operadora":{
+      "nome":"Vivo",
+      "codigo":"15",
+      "categoria":"Celular"
+    },
+    "cor":"#bdc3c7"
+  },
+  {
     "nome": "Paulo Virote",
     "telefone":"99516-5152",
     "data":"2015-04-12",

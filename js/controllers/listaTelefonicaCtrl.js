@@ -11,7 +11,7 @@ angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function($sc
       $scope.contatos = response.data;
     };
     function errorContatos(response){
-      $scope.message = "Aconteceu um problema no carregarContatos()";
+      $scope.message = "Aconteceu um problema em adicionarContato() e não foi possível carregar os dados.";
     };
 
   var carregarOperadoras = function (){
@@ -33,7 +33,7 @@ angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function($sc
       carregarContatos();
     };
     var errorAddContact = function(contato){
-      $scope.message = "Aconteceu um problema no adicionarContato()";
+      $scope.message = "Aconteceu um problema em adicionarContato() e não foi possível carregar os dados.";
     };
 
   $scope.apagarContatos = function(contatos){
