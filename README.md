@@ -3,4 +3,4 @@ This is a phone list app developed using Angular 1, Nodejs and Sass following th
 
 ___
 
-![App Layout](https://github.com/paulosouzav/angular1-course/img/App.png "Application")
+![App Layout](https://github.com/paulosouzav/angular1-course/blob/master/img/App.png "Application")
