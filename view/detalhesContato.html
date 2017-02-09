@@ -1,0 +1,30 @@
+<div class="jumbotron container" style="max-width:500px">
+  <h2>Detalhes do contato</h2>
+  <table class="table table-striped">
+    <tr>
+      <th>Nome</th>
+      <td title="{{contato.nome | name}}">
+        {{contato.nome | name}}
+      </td>
+    </tr>
+    <tr>
+      <th>Telefone</th>
+      <td>{{contato.telefone}}</td>
+    </tr>
+    <tr>
+      <th>Operadora</th>
+      <td>{{contato.operadora.nome}}</td>
+    </tr>
+    <tr>
+      <th>Data</th>
+      <td>{{contato.data | date:'dd/MM/yy HH:MM'}}</td>
+    </tr>
+    <tr>
+      <th>Cor</th>
+      <td><div ng-style="{'background-color': contato.cor, 'color': '#fff'}">
+        {{contato.cor}}
+      </div></td>
+    </tr>
+  </table>
+
+</div>
