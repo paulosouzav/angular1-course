@@ -1,49 +1,36 @@
-angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function($scope, contatosAPI, operadorasAPI, serialGenerator){
+angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function($scope, operadoras, contatos, serialGenerator){
   $scope.app = "Lista Telefonica";
 
-  $scope.contatos = [];
-  $scope.operadoras = [];
+  $scope.contatos = contatos.data;
+  $scope.operadoras = operadoras.data;
 
-  var carregarContatos = function (){
-    contatosAPI.getContatos().then(successContatos, errorContatos);
-  };
-    function successContatos(response){
-      $scope.contatos = response.data;
-    };
-    function errorContatos(response){
-      $scope.message = "Aconteceu um problema em adicionarContato() e não foi possível carregar os dados.";
-    };
 
-  var carregarOperadoras = function (){
-    operadorasAPI.getOperadoras().then(function
-      successOperadoras(response){
-        $scope.operadoras = response.data;
-      }
-    )
+  var init = function () {
+    calcularImpostos($scope.contatos);
+    generateSerial($scope.contatos);
   };
 
-  $scope.adicionarContato = function (contato){
-    contato.serial = serialGenerator.generate();
-    contato.data = new Date();
-    contatosAPI.saveContato(contato).then(successAddContact, errorAddContact);
+  var calcularImpostos = function (contatos) {
+    contatos.forEach(function(contato){
+      contato.operadora.precoComImposto = calcularImposto(contato.operadora.preco);
+    });
   };
-    var successAddContact = function (contato){
-      delete $scope.contato;
-      $scope.contatoForm.$setPristine();
-      carregarContatos();
-    };
-    var errorAddContact = function(contato){
-      $scope.message = "Aconteceu um problema em adicionarContato() e não foi possível carregar os dados.";
-    };
+
+  var generateSerial = function (contatos){
+    contatos.forEach(function(item){
+      item.serial = serialGenerator.generate();
+    });
+  };
 
   $scope.apagarContatos = function(contatos){
     $scope.contatos = contatos.filter(function(contato){
       if (!contato.selecionado) return contato;
     });
+    $scope.verificarContatoSelecionado($scope.contatos)
   };
 
-  $scope.isContatoSelecionado = function(contatos){
-    return contatos.some(function(contato){
+  $scope.verificarContatoSelecionado = function(contatos){
+    $scope.hasSelectedContact = contatos.some(function(contato){
       return contato.selecionado;
     });
   };
@@ -53,7 +40,11 @@ angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function($sc
     $scope.direcaoDaOrdenacao = !$scope.direcaoDaOrdenacao;
   };
 
-  carregarContatos();
-  carregarOperadoras();
+  var calcularImposto = function (preco) {
+    var imposto = 1.2;
+    return preco * imposto;
+  };
+
+  init();
 
 });
